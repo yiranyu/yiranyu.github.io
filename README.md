@@ -1,2 +1,2 @@
 # yiranyu.github.io
-Personal blog
+学习代码整理。开始把平时写的代码都整理整理，放在一个地方。这也是学习一部分。
