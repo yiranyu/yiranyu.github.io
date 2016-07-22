@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CSS动画</title>
+	<style>
+		.main{
+			width:600px;
+			height:auto;
+			margin:100px auto 0;
+		}
+		h2{
+			margin-bottom: 100px;
+			font-size: 30px;
+		}
+		.box{
+			display:inline-block;
+			width:100px;
+			height:100px;
+			margin: 0 25px;
+		}
+		@keyframes loading1{
+			from{
+				transform:rotate(-360deg);
+			}
+		}
+		@keyframes loading2{
+			from{
+				transform:rotate(360deg);
+			}
+		}
+		.loading1{
+			animation:loading1 3s linear 0s infinite; 
+			background:#C8E89D;
+		}
+		.loading2{
+			background:#3DCEA6;
+			animation:loading2 3s linear 0s infinite; 
+		}
+		.loading3{
+			background:#62BCDE;
+			animation:loading2 6s linear 2s infinite; 
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<h2>CSS3动画</h2>
+		<span class="box loading1"></span>
+		<span class="box loading2"></span>
+		<span class="box loading3"></span>
+	</div>
+	<script type="text/javascript">
+		var arr = [
+			{name:'小明',sex:1,age:6},
+			{name:'小红',sex:0,age:5},
+			{name:'小花',sex:0,age:9},
+			{name:'小玉',sex:0,age:3}
+		];
+		arr = arr.filter(function(item){
+			return item.sex==0;
+		}).sort(function(p1,p2){
+			return p2.age-p1.age;
+		});
+		
+		console.log(arr);
+	</script>
+
+</body>
+</html>
