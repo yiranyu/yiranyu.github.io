@@ -50,21 +50,5 @@
 		<span class="box loading2"></span>
 		<span class="box loading3"></span>
 	</div>
-	<script type="text/javascript">
-		var arr = [
-			{name:'小明',sex:1,age:6},
-			{name:'小红',sex:0,age:5},
-			{name:'小花',sex:0,age:9},
-			{name:'小玉',sex:0,age:3}
-		];
-		arr = arr.filter(function(item){
-			return item.sex==0;
-		}).sort(function(p1,p2){
-			return p2.age-p1.age;
-		});
-		
-		console.log(arr);
-	</script>
-
 </body>
 </html>
