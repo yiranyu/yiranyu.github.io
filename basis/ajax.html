@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>电影</title>
+	<style>
+		html,body,td,p,textarea,input{font-size:12px;font-family:"Helvetica Neue",Helvetica,Tahoma,Arial,sans-serif; color:#606566;background-color:#fff;}
+		html,body,form,h1,h2,h3,h5,h6,p{padding:0; margin:0;}
+		body {width:100%;margin:0 auto;}
+		img{border:0;}
+		textarea,input,select{font-size:12px;}
+		table{ border-collapse:collapse;}
+		button::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="reset"]::-moz-focus-inner {padding: 0 ; border: 0 ;}
+		p {display: block;-webkit-margin-before: 1em;-webkit-margin-after: 1em;-webkit-margin-start: 0px;-webkit-margin-end: 0px;text-indent:2em;}
+		a{text-decoration:none; color:#4f4f4f;}
+		a:hover{color:#09B8F7;}
+		a:focus{outline:none;}
+		a:active {star:expression(this.onFocus=this.blur());}
+		*{box-sizing:border-box;-moz-box-sizing:border-box; /* Firefox */-webkit-box-sizing:border-box; /* Safari */}
+
+		body {
+			height: 90%;
+		}
+
+		header {
+			width: 100%;
+			text-align: center;
+			border-bottom: 1px solid #dfdfdf;
+		}
+
+		#topic {
+			margin: 20px 0;
+		}
+
+		footer {
+			text-align: center;
+			color: #8f8f8f;
+		}
+
+		#main {
+			width: 800px;
+			min-height: 660px;
+			height: auto!important;
+			margin: 10px auto;
+			
+		}
+
+		#main section {
+			width: 100%;
+			height: 120px;
+			padding: 5px;
+			border-bottom: 1px dashed #ddd;
+			margin: 10px 0;
+		}
+
+		#main section>span{
+			display: block;
+			float: left;
+			width: 50px;
+			font-size: 1.5em;
+			color: #EF7676;
+		}
+
+		#main section>img {
+			float: left;
+		}
+
+		#main section>div{
+			float: left;
+			padding: 0 15px;
+		}
+
+		#main section h3{
+			margin-bottom: 10px;
+		}
+
+		#main section div span{
+			display: block;
+			line-height: 16px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h2 id="topic">电影</h2>
+		<p>数据来源于豆瓣</p>
+	</header>
+	<article id="main">
+
+	</article>
+	<footer>
+		<p> © 2005－2016 yu, all rights reserved</p>
+	</footer>
+	<script type="text/javascript" src="js/jquery-1.6.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			/**$.getJSON("https://api.douban.com/v2/movie/top250?callback=?",  
+				function(result) {  
+					var subjects = result.subjects;
+					$("#topic").html(result.title);
+					$.each(subjects, function(i,item){
+						item = subjects[i];
+						$("#main").append($("<section></section>"));
+						
+						$("section:last").append("<span>"+item.rating.average+"</span>");
+						$("section:last").append("<img alt='"+item.alt+"' src='"+item.images.small+"'/>");
+						$("section:last").append("<div></div>");
+						$("section:last div").append("<h3><a href='"+item.alt+"'>"+item.title+"</a></h3>");
+						$("section:last div").append("<span>类别："+item.genres+"</span>");
+						$("section:last div").append("<span>导演："+item.directors[0].name+"</span>");
+						
+						var names ="";
+						$.each(item.casts, function(j, cast){
+							names = names+cast.name+", ";
+						})
+						
+						$("section:last div").append("<span>主演："+names.substring(0, names.length-2)+"</span>");
+						$("section:last div").append("<span>年份："+item.year+"</span>");
+					});
+
+				}
+			);*/
+			
+			$.ajax({
+				url: "https://api.douban.com/v2/movie/top250",
+				dataType: "jsonp",
+				success: function(result){
+					var subjects = result.subjects;
+					$("#topic").html(result.title);
+					$.each(subjects, function(i,item){
+						item = subjects[i];
+						$("#main").append($("<section></section>"));
+						
+						$("section:last").append("<span>"+item.rating.average+"</span>");
+						$("section:last").append("<img alt='"+item.alt+"' src='"+item.images.small+"'/>");
+						$("section:last").append("<div></div>");
+						$("section:last div").append("<h3><a href='"+item.alt+"'>"+item.title+"</a></h3>");
+						$("section:last div").append("<span>类别："+item.genres+"</span>");
+						$("section:last div").append("<span>导演："+item.directors[0].name+"</span>");
+						
+						var names ="";
+						$.each(item.casts, function(j, cast){
+							names = names+cast.name+", ";
+						})
+						
+						$("section:last div").append("<span>主演："+names.substring(0, names.length-2)+"</span>");
+						$("section:last div").append("<span>年份："+item.year+"</span>");
+					});
+				},
+				error: function(){
+					alert("Something is error");
+				}
+				
+			});
+			
+		});
+	</script>
+</body>
+</html>
