@@ -1,0 +1,411 @@
+
+@import "compass/css3";
+@import "compass/reset";
+@import "compass/utilities/general/clearfix";
+@import "icomoon";
+
+$bg-color: #efefef;
+$text-color: #4f4f4f;
+$secondy-text-color: #D9DADA;
+$highlight-text-color: white;
+$button-color: #6cdcac;
+$border-color: #dadada;
+
+body {
+	font-family: sans-serif;
+	font-size: 100%;
+	text-align: center;
+	background-color: #576474;
+}
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-sizing: border-box;
+	box-sizing: border-box;
+
+}
+a {
+	text-decoration: none;
+	color: #566373;
+}
+#content{
+	width: 90%;
+	margin: 0 auto;	
+	background-color: #f3f3f3;
+}
+
+.hero {
+	max-width: 100em;
+	margin: 0 auto ;
+	height: 40em;
+	background: url('../images/find-an-agent-hero.png');
+	background-size: cover;
+	color: $highlight-text-color;
+
+	header {
+		padding: 2em 0 0;
+		img {
+			width: 8em;
+			height: 2em;
+			float: left;
+			margin: 0 0 0 10%
+		}
+		ul {
+			float: right;
+			padding: 0 10% 0 0;
+			li {
+				float: left;
+				margin: 1em 0.5em;
+				padding: 0.5em 0.5em;
+				border: 1px solid transparent;
+				@include border-radius(2px);
+
+				&:last-child {
+					border: 1px solid $highlight-text-color;
+				}
+			}
+		}
+		@include clearfix;
+	}
+	h1 {
+		font-size: 2em;
+		padding: 6em 0 0.5em 0;
+		font-weight: bold;
+	}
+	h2 {
+		font-size: 1.2em;
+		color: $secondy-text-color;
+	}
+	
+}
+form {
+		padding: 3em 0 4em 0;
+
+		input[type="text"] {
+			padding: 1em;
+			border: 0;
+			width: 30em;
+			border-radius: 2px 0 0 2px;
+			background: $bg-color;
+			@include opacity(0.3);
+		}
+		input[type="button"] {
+			color: $highlight-text-color;
+			padding: 1em;
+			border: 0;
+			width: 8em;
+			border-radius: 0 2px 2px 0;
+			background-color: lightgreen;
+			text-transform: uppercase;
+		}
+	}
+
+.numbers {
+	width: 80%;
+	margin: 0 auto;
+	ul {
+		position: relative;
+		top: -4em;
+		background-color: #f3f3f3;
+
+		li {
+			float: left;
+			width: 25%;
+			border-top: 1px solid $secondy-text-color;
+			border-bottom: 1px solid $secondy-text-color;
+			border-left: 1px solid $secondy-text-color;
+		}
+
+		&:last-child {
+			border-right: 1px solid $secondy-text-color;
+		}
+
+		h2 {
+			font-size: 2em;
+			padding: 1em 0;
+		}
+		h3 {
+			padding: 0 0 2em 0;
+		}
+
+		@include clearfix;
+	}
+}
+
+.how-it-works {
+	width: 80%;
+	margin: 0 auto;
+	h2 {
+		font-size: 1.6em;
+		text-transform: uppercase;
+		font-weight: bold;
+		padding: 2em 0  1em 0;
+
+		&:after {
+			display: block;
+			content: "";
+			background-color: $border-color;
+			width: 2em;
+			height: 0.1em;
+			margin: 0.4em auto;
+		}
+	}
+	ul {
+
+		li {
+			float: left;
+			width: 33.33%;
+
+			&:before {
+				display: block;
+				content: "";
+				background-color: $border-color;
+				height: 1px;
+				position: relative;
+				top: 4em;
+				left: 50%;
+				margin: 0 2em;
+			}
+
+			&:last-child:before {
+				display: none;
+			}
+			.detail {
+				.number {
+					font-size: 2em;
+					color: #b3b6be;
+					border: 1px solid $border-color;
+					width: 2em;
+					height: 2em;
+					display: block;
+					margin: 1em auto;
+					padding: 0.4em;
+					@include border-radius(100%);
+				}
+
+				i {
+					font-size: 3.6em;
+				}
+				.icon-home {
+					color: #ECA95A;
+				}
+				.icon-pencil {
+					color: #AC9CD2;
+				}
+				.icon-users {
+					color: #4D99CB;
+				}
+
+				h3 {
+					font-size: 1.6em;
+					color: #000;
+					font-weight: bold;
+					margin: 1.5em 0 0.6em 0;
+				}
+
+				p {
+					color: #6e6e6e;
+					font-size: 1.2em;
+					margin: 0 1.7em;
+				}
+
+			}
+
+
+		}
+	}
+	@include clearfix;
+}
+.why-choose-us:before,.feedback:before {
+	display: block;
+	content: "";
+	background-color: $border-color;
+	width: 100%;
+	height: 1px;
+	margin: 6em auto;
+}
+
+.why-choose-us {
+	width: 100%;
+	margin: 0 auto ;
+	h2 {
+		font-size: 1.6em;
+		text-transform: uppercase;
+		font-weight: bold;
+		margin: 0 0 2em 0;
+
+		&:after {
+			display: block;
+			content: "";
+			background-color: $border-color;
+			width: 2em;
+			height: 0.1em;
+			margin: 0.4em auto;
+		}
+	}
+	ul {
+		width: 80%;
+		margin: 0 auto;
+		text-align: left;
+
+		li {
+			width: 50%;
+			float: left;
+			margin: 0 0 2em 0;
+			padding: 0 2em 0 4em;
+
+			i {
+				font-size: 2em;
+				float: left;
+				width: 15%;
+			}
+			.icon-checkmark2 {
+				color: #64c095;
+			}
+			.icon-price-tag {
+				color: #05b2ed;
+			}
+			.icon-loop2 {
+				color: #eea859;
+			}
+			.icon-user {
+				color: #ac79c2;
+			}
+			.icon-file-text {
+				color: #f36d7c;
+			}
+			.icon-heart {
+				color: #ed7f5a;
+			}
+
+			div {
+				float: left;
+				width: 70%;
+
+				h3 {
+					font-size: 1.6em;
+					color: #000;
+					font-weight: bold;
+					margin: 0 0 0.6em 0;
+				}
+				p {
+					font-size: 1.2em;
+					color: #6e6e6e;
+				}
+
+			@include clearfix;
+			}
+		}
+		@include clearfix;
+	}
+}
+
+.feedback {
+	width: 100%;
+	margin: 0 auto;
+	color: #60677b;
+	.title {
+		width: 24em;
+		margin: 0 auto;
+		padding: 0 0 3em 0;
+		div {
+			width: 12em;
+			height: 2em;
+			padding: 1em 0 2em 0;
+			float: left;
+			border-top: 1px solid #b2b1b8;
+			border-bottom: 1px solid #b2b1b8;
+		}
+		.testimonials {
+			background-color: #60677b;
+			border-radius: 0.3em 0 0 0.3em;
+			color: #fff;
+		}
+		.recent-feedbacks {
+			border-right: 1px solid #b2b1b8;
+			border-radius: 0 0.3em 0.3em 0;
+			color: #63646e;
+		}
+		@include clearfix;
+	}
+	p {
+		width: 70%;
+		margin: 1em auto;
+		text-align: center;
+		font-size: 1.5em;
+		font-weight: bold;
+		color: #90909b;
+		&:after {
+			display: block;
+			content: "";
+			width: 2em;
+			height: 1px;
+			background-color: $border-color;
+			margin: 1em auto;
+		}
+	}
+	span {
+		display: block;
+		line-height: 1.5em;
+	}
+	.name {
+		font-size: 1.53m;
+		font-weight: bold;
+	}
+	.portrait {
+		margin: 4em auto;
+		img {
+			width: 8em;
+			height: 8em;
+			border-radius: 50%;
+			margin: 0 1em;
+			padding: 0.4em;
+			border: 1px solid $border-color;
+			background-color: #fff;
+			opacity: 0.2;
+		}
+		.lock {
+			@include opacity(1);
+		}
+	}
+}
+.find-an-agent {
+	background: url('../images/find-an-agent.png');
+	background-size: cover;
+	span {
+		color: #fff;
+		font-size: 1.5em;
+		font-weight: bold;
+	}
+	input[type="text"] {
+		width: 40em;
+		background-color: #fff;
+		@include opacity(1);
+	}
+}
+footer {
+	width: 80%;
+	margin: 0 auto;
+	height: 3.5em;
+	padding: 1.5em;
+	.options {
+	}
+	.shares {
+		float: right;
+	}
+	li {
+		float: left;
+		padding: 0 10px;
+	}
+	.shares a {
+		font-size: 1.3em;
+	}
+	.icon-twitter {
+		color: #469cd0;
+	}
+	.icon-facebook {
+		color: #5371b6;
+	}
+	@include clearfix;
+}
