@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="">
+		<title>CSS布局</title>
+		<link rel="stylesheet" href="css/layout.css">
+	</head>
+	<body>
+		<div id="header">
+			<h2>头部</h2>
+		</div>
+		<!--两栏：左栏固定宽，右栏自适应-->
+		<div id="container-lr" class="container">
+			<div id="content-lr">
+				<h2>右栏宽度自适应</h2>
+			</div>
+			<div id="aside-lr">
+				<h2>左栏宽度固定</h2>
+			</div>
+		</div>
+		
+		<!--两栏：右栏固定宽，左栏自适应-->
+		<div id="container-rl" class="container">
+			<div id="content-rl">
+				<h2>左栏宽度自适应</h2>
+			</div>
+			<div id="aside-rl">
+				<h2>右栏宽度固定</h2>
+			</div>
+		</div>
+
+		
+		<!--三栏：左右栏固定宽，中间自适应-->
+		<div class="container">
+			<div id="left-lmr">
+				<h2>左栏宽度固定</h2>
+			</div>
+			<div id="right-lmr">
+				<h2>右栏宽度固定</h2>
+			</div>
+			<div id="content-lmr">
+				<h2>中间栏宽度自适应</h2>
+			</div>
+		</div>
+
+		
+		<!--三栏：左两栏固定宽，右栏自适应-->
+		<div class="container">
+			<div id="left-lrm">
+				<h2>左两栏宽度固定</h2>
+			</div>
+			<div id="right-lrm">
+				<h2>左两栏宽度固定</h2>
+			</div>
+			<div id="content-lrm">
+				<h2>右栏宽度自适应</h2>
+			</div>
+		</div>
+		
+		<!--三栏：右两栏固定宽，左栏自适应-->
+		<div class="container">
+			<div id="right-mlr">
+				<h2>右两栏宽度固定</h2>
+			</div>
+			<div id="left-mlr">
+				<h2>右两栏宽度固定</h2>
+			</div>
+			<div id="content-mlr">
+				<h2>左栏宽度自适应</h2>
+			</div>
+		</div>
+		
+		<div id="footer">
+			<h2>底部</h2>
+		</div>
+		<div id="note">
+			<p>两栏布局：margin负值法。负margin可以使文档流的元素位置发生偏移。<p>
+			<p>三栏布局：自身浮动法。利用了标签浮动跟随的特性。<p>
+		</div>
+	</body>
+</html>
