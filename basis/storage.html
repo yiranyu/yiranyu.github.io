@@ -40,19 +40,24 @@
 			font-size: 70%;
 			-webkit-appearance: none;
 		}
-		#save {
+		#save, #clear {
 			text-decoration: none;
 			color: #fff;
 			padding: 4px 20px 12px;
 			border-radius: 4px;
 			background-color: #119dcb;
 		}
+		#clear {
+			position: relative;
+			top: 70px;
+			left: -180px;
+		}
 		#welcome {
 			float: left;
 		}
 		.add {
 			float: right;
-			height: 400px;
+			height: 200px;
 		}
 		
 
@@ -69,6 +74,7 @@
 		    	<input id="name" type="text" placeholder="Input your name">
 		    	<a id="save" href="#">Save</a>
 		    </div>
+			<a id="clear" href="#">Clear</a>
     	</div>
     	<!-- <a href="http://caniuse.com/#search=localStorage" title="Can I Use?">
     		<img src="web-storage.png" alt="image">
@@ -97,9 +103,11 @@
     				localStorage.setItem("name", name);
     				wel.innerHTML='Welcome, '+name+'!';
 
-    			}else{
-    				//alert('none');
     			}
+    		}
+			document.getElementById('clear').onclick=function(){
+    			localStorage.removeItem("name");
+    			wel.innerHTML='Welcome! You can set your name.';
     		}
     	});
     </script>
