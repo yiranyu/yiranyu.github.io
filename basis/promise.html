@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Promise示例</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <style type="text/css">
+        #message {
+            width: 360px;
+            margin: 100px auto;
+            font-size: 16px;
+        }
+        #red, #green, #yellow {
+            float: left;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        #red {
+            background-color: red;
+        }
+         #green {
+            background-color: green;
+        }
+         #yellow {
+            background-color: yellow;
+        }
+        .close{
+            opacity: 0.2;
+        }
+    </style>
+</head>
+<body>
+
+<div id="message">
+    <div id="red" class="close"></div>
+    <div id="green" class="close"></div>
+    <div id="yellow" class="close"></div>
+</div>
+<script type="text/javascript">
+    /**
+     * 题目：红灯三秒亮一次，绿灯一秒亮一次，黄灯2秒亮一次；如何让三个灯不断交替重复亮灯？
+     * （用Promise实现）三个亮灯函数已经存在：
+     */
+    (function(window, document) {
+        var messagebox=document.getElementById('message');
+        var lights=messagebox.getElementsByTagName('div');
+        function red() {
+            console.log('red');
+            lights[0].className='';
+            lights[1].className='close';
+            lights[2].className='close';
+        }
+
+        function green() {
+            console.log('green');
+            lights[0].className='close';
+            lights[1].className='';
+            lights[2].className='close';
+        }
+
+        function yellow() {
+            console.log('yellow');
+            lights[0].className='close';
+            lights[1].className='close';
+            lights[2].className='';
+        }
+
+        //常规方法实现
+        var fun = function() {
+                setTimeout(function() {
+                    red();
+                    setTimeout(function() {
+                        green();
+                        setTimeout(function() {
+                            yellow();
+                            fun();
+                        }, 1000);
+                    }, 2000);
+                }, 3000);
+            }
+            //fun();
+
+        //Promise实现:定义一个时间控制函数
+        var timeController = function(timmer, func) {
+            return new Promise(function(resolve, reject) {
+                setTimeout(function() {
+                    func();
+                    resolve();
+                }, timmer);
+            });
+        };
+        var d = new Promise(function(resolve, reject) {
+            resolve();
+        });
+        var step = function(def) {
+            def.then(function() {
+                return timeController(3000, red);
+            }).then(function() {
+                return timeController(2000, green);
+            }).then(function() {
+                return timeController(1000, yellow);
+            }).then(function() {
+                step(def);
+            });
+        }
+
+        step(d);
+    })(window,document);
+</script>
+</body>
+</html>
