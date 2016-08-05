@@ -83,8 +83,10 @@
 
     function handler(event) {
         alert("只出现一次");
+		console.log(eventUtil.getTarget(eventUtil.getEvent()));
+		console.log(eventUtil.getEvent());
         eventUtil.removeEvent(ele,"click",handler);
-    }
+	    }	
 
 
 })();

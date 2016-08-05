@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>自定义事件</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <style type="text/css">
+    h1 {
+        text-align: center;
+    }
+    #message{
+        width: 300px;
+        margin: 100px auto;
+        font-size: 16px;
+        line-height: 25px;
+    }
+    </style>
+</head>
+<body>
+<h1>小试自定义事件</h1>
+<div id="message"><h2>测试</h2></div>
+<script type="text/javascript">
+    (function(window, document) {
+
+        /*
+         *自定义事件类型：组合使用构造函数模式和原型模式
+         */
+        //构造函数模式定义实例属性
+        function CustomEvent(){
+            this._listeners= {};
+        }
+        //原型模式定义方法和共享属性
+        CustomEvent.prototype={
+            constructor: CustomEvent,
+            //添加事件
+            addEvent: function(e, fn) {
+                if (typeof this._listeners[e]==='undefined') {
+                    this._listeners[e] = [];
+                }
+                if (typeof fn === 'function') {
+                    //同一个时间的同一个fn是否可以重复添加？
+                    this._listeners[e].push(fn);
+                }
+            },
+            //移除事件:如果addEvent传入的是匿名函数，则不能单独针对匿名函数事件的移除
+            removeEvent: function(e, fn) {
+                //对参数进行判断
+                var arr=this._listeners[e],
+                    len;
+                if (typeof e !== 'string' ||!(arr instanceof Array)) {
+                    return this;
+                }
+                //清除e对应的fn函数
+                len=arr.length;
+                if (typeof fn === 'function') {
+                    for(var i=0;i<len;i++){
+                        if(arr[i]===fn){
+                            arr.spice(i,1); //删除
+                        }
+                    }
+                }else{//如果fn不满足条件或者没有传入，则清除e的全部事件方法
+                    delete this._listeners[e];
+                }
+                return this;
+            },
+            //触发事件：如果传入e，则只触发e，否则触发对象的所有事件
+            fireEvent: function(e){
+                var arr=this._listeners[e],
+                    len;
+                if(arr instanceof Array){
+                    len=arr.length;
+                    for(var i=0;i<len;i++){
+                        if(typeof arr[i]==='function'){//执行e事件的所有方法
+                            arr[i](e);
+                        }
+                    }
+                }
+                return this;
+            },
+            //清空一个对象的所有事件
+            clear: function(){
+                this._listeners={};
+            }
+        };
+
+        //test
+        var a=new CustomEvent();
+        var b=new CustomEvent();
+        var message=document.getElementById('message');
+        a.addEvent('test',function(e){
+            message.innerHTML+=('a fireEvent '+e+'<br/>');
+        });
+        function fna(e){
+            message.innerHTML+=('a fireEvent '+e+' another<br/>');
+        }
+        a.addEvent('test',fna);
+        b.addEvent('test',function(e){
+            message.innerHTML+=('b fireEvent '+e+'<br/>');
+        })
+        message.innerHTML+=('触发对象a的test事件：<br/>');
+        a.fireEvent('test');
+        message.innerHTML+=('触发对象b的test事件：<br/>');
+        b.fireEvent('test');
+        message.innerHTML+=('移除对象a的test事件：<br/>');
+        a.removeEvent('test');
+        message.innerHTML+=('触发对象a的test事件：<br/>');
+        a.fireEvent('test');
+        message.innerHTML+=('触发对象b的test事件：<br/>');
+        b.fireEvent('test');
+
+
+    })(window, document);
+
+</script>
+</body>
+</html>
