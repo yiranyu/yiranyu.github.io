@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>CSS animation</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<style>
+	#content {
+		width: 1024px;
+		margin: 0 auto;
+		text-align: center;
+	}
+	h2{
+		margin: 100px 0;
+	}
+
+	@keyframes test {
+		from {
+			transform: rotateY(0deg);
+		}
+		to {
+			transform: rotateY(360deg);
+		}
+	}
+
+	.re-3d {
+		width: 200px;
+		height: 200px;
+		animation: test 10s;
+		-moz-animation: test 10s;	/* Firefox */
+		-webkit-animation: test 10s infinite;	/* Safari 和 Chrome */
+		-o-animation: test 10s;	/* Opera */
+	}
+	.hover-3d {
+		width: 200px;
+		height: 200px;	
+		transition: 3s .5s opacity;
+		transition: 3s transform;
+		opacity: 0.6;
+	}
+	.hover-3d:hover {
+		opacity: 1;
+		transform: rotateY(180deg);
+	}
+</style>
+</head>
+<body>
+	<div id="content">
+		<h2>CSS3立体3D旋转动画效果</h2>
+	    <img class="re-3d" src="images/ia.jpg" alt="image">
+	    <img class="re-3d" src="images/truck.jpg" alt="image">
+	    <img class="re-3d" src="images/ia.jpg" alt="image">
+	    <br/><br/>
+	    <img class="hover-3d" src="images/ia.jpg" alt="image">
+	    <img class="hover-3d" src="images/truck.jpg" alt="image">
+	    <img class="hover-3d" src="images/ia.jpg" alt="image">
+	</div>
+</body>
+</html>

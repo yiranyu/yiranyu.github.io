@@ -28,7 +28,7 @@
 			margin: 50px auto 0;
 			overflow: hidden;
 		}
-		#name {
+		#name, #something {
 			display: block;
 			width: 300px;
 			height: 45px;
@@ -49,10 +49,10 @@
 		}
 		#clear {
 			position: relative;
-			top: 70px;
+			top: 100px;
 			left: -180px;
 		}
-		#welcome {
+		#welcome, #other {
 			float: left;
 		}
 		.add {
@@ -72,42 +72,44 @@
     		<p id="welcome">New visitor!</p>
 	    	<div class="add">
 		    	<input id="name" type="text" placeholder="Input your name">
+				<input id="something" type="text" placeholder="Input anything">
 		    	<a id="save" href="#">Save</a>
 		    </div>
 			<a id="clear" href="#">Clear</a>
     	</div>
-    	<!-- <a href="http://caniuse.com/#search=localStorage" title="Can I Use?">
-    		<img src="web-storage.png" alt="image">
-    	</a> -->
     	
     </div>
     <script type="text/javascript">
     	window.onload=(function(){
-    		var wel=document.getElementById('welcome');
-    		if(window.localStorage){
-    			document.getElementById('message').innerHTML='O(∩_∩)O……You browser supports the function';
+    		var wel=document.getElementById("welcome");
+    		if(window.localStorage&&window.sessionStorage){
+    			document.getElementById("message").innerHTML="O(∩_∩)O……You browser supports the function";
     			
 				//get	
 				var name = localStorage.getItem("name");
 				if(name){
-					wel.innerHTML='Welcome, '+name+'!';
+					wel.innerHTML="Welcome, "+name+"! <br/>Session message:"+sessionStorage.getItem("something");
 				}
 
     		}else{
-    			document.getElementById('message').innerHTML='/(ㄒoㄒ)/~~……You browser does not support the function';
+    			document.getElementById("message").innerHTML="/(ㄒoㄒ)/~~……You browser does not support the function";
     		}
-    		document.getElementById('save').onclick=function(){
-    			var name=document.getElementById('name').value;
+    		document.getElementById("save").onclick=function(){
+    			var name=document.getElementById("name").value;
+				var something=document.getElementById("something").value;
+				if(something){
+					sessionStorage.setItem("something",something);
+				}
     			if(name){
     				//storage
     				localStorage.setItem("name", name);
-    				wel.innerHTML='Welcome, '+name+'!';
-
     			}
+				wel.innerHTML="Welcome, "+localStorage.getItem("name")+"! <br/>Session message:"+sessionStorage.getItem("something");
     		}
-			document.getElementById('clear').onclick=function(){
+			document.getElementById("clear").onclick=function(){
     			localStorage.removeItem("name");
-    			wel.innerHTML='Welcome! You can set your name.';
+				sessionStorage.removeItem("something");
+    			wel.innerHTML="Welcome! You can set your name.";
     		}
     	});
     </script>
