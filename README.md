@@ -16,6 +16,7 @@
 - [JS登录验证](http://yiranyu.github.io/basis/login.html)
 - [AJAX获取豆瓣电影](http://yiranyu.github.io/basis/ajax.html)
 - [JS通用事件对象](http://yiranyu.github.io/basis/event.html)
+- [JS自定义事件对象](http://yiranyu.github.io/basis/custom-event.html)
 - [Promise示例](http://yiranyu.github.io/basis/promise.html)
 
 ## 其它
