@@ -86,7 +86,7 @@
 		console.log(eventUtil.getTarget(eventUtil.getEvent()));
 		console.log(eventUtil.getEvent());
         eventUtil.removeEvent(ele,"click",handler);
-	    }	
+	    }
 
 
 })();
