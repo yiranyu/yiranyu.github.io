@@ -4,6 +4,7 @@
 
 ## CSS
 - [基本布局](http://yiranyu.github.io/basis/layout.html)
+- [Flex布局](http://yiranyu.github.io/basis/flex.html)
 - [CSS3旋转框](http://yiranyu.github.io/basis/animation.html)
 - [CSS3立体3D](http://yiranyu.github.io/basis/3d.html)
 
