@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>copy</title>
+	<style>
+		body {
+		padding-top: 100px;
+			text-align: center;
+		}
+		.h1 {
+			padding: 10px;
+			border-left: 5px solid #87e;
+			background-color: #aaa;
+		}
+		#website {
+			width: 300px;
+			height: 30px;
+			font-size: 20px;
+			border: 2px solid #03a9f4;
+		}
+		#copy {
+			padding: 9px;
+			background-color: #03a9f4;
+		}
+		p {
+			width: 500px;
+			margin: 50px auto 0;
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1>页面复制功能</h1>
+	<input type="text" id="website" value="复制的内容" />
+	<button id="copy" data-copytarget="#website">复制</button>
+	<p contenteditable="true">将复制的内容粘贴到此处试试 </p>
+	<script type="text/javascript">
+		(function() {
+			'use strict';
+			// click events
+			// 添加点击事件
+			document.body.addEventListener('click', copy, true);
+
+			// event handler
+			// 添加时间处理方法
+			function copy(e) {
+				// find target element
+				// 搜索目标元素
+				var
+				  t = e.target,
+				  c = t.dataset.copytarget,
+				  inp = (c ? document.querySelector(c) : null);
+			 
+				// is element selectable?
+				// 判断元素是否能被选中
+				if (inp&&inp.select) {
+					// select text
+					// 选择文本
+					inp.select();
+
+					try {
+						// copy text
+						// 复制文本
+						document.execCommand('copy');
+						inp.blur();
+					}
+					catch (err) {
+						alert('please press Ctrl/Cmd+C to copy');
+					}
+				}
+			}
+		})();
+		
+	</script>
+</body>
+</html>
+
