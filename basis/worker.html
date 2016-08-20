@@ -33,13 +33,13 @@
         var w;
         function startWorker(){
             if(typeof(Worker)!=="undefined"){
-                if(typeof(w)=="undefined"){ //´´½¨Web Worker¶ÔÏó
+                if(typeof(w)=="undefined"){ //åˆ›å»ºWeb Workerå¯¹è±¡
                     w=new Worker("js/worker.js");
                  }
 				
-                //µ± web worker ´«µİÏûÏ¢Ê±£¬»áÖ´ĞĞÊÂ¼ş¼àÌıÆ÷ÖĞµÄ´úÂë¡£event.data ÖĞ´æÓĞÀ´×Ô event.data µÄÊı¾İ¡£
+                //å½“ web worker ä¼ é€’æ¶ˆæ¯æ—¶ï¼Œä¼šæ‰§è¡Œäº‹ä»¶ç›‘å¬å™¨ä¸­çš„ä»£ç ã€‚event.data ä¸­å­˜æœ‰æ¥è‡ª event.data çš„æ•°æ®ã€‚
                 w.onmessage = function (event) {
-					document.getElementById("result").innerHTML=event.data;
+		   document.getElementById("result").innerHTML=event.data;
                 };
             }else{
                 document.getElementById("result").innerHTML="Sorry, your browser does not support Web Workers...";
@@ -47,8 +47,8 @@
         }
 
         function stopWorker(){
-            w.terminate(); //ÖÕÖ¹
-			w=undefined;
+            w.terminate(); //ç»ˆæ­¢
+	    w=undefined;
         }
     </script>
 </body>
