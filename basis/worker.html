@@ -34,7 +34,7 @@
         function startWorker(){
             if(typeof(Worker)!=="undefined"){
                 if(typeof(w)=="undefined"){ //创建Web Worker对象
-                    w=new Worker("js/demo.js");
+                    w=new Worker("js/worker.js");
                  }
                 //当 web worker 传递消息时，会执行事件监听器中的代码。event.data 中存有来自 event.data 的数据。
                 w.onmessage = function (event) {
