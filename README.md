@@ -20,6 +20,7 @@
 - [JS自定义事件对象](http://yiranyu.github.io/basis/custom-event.html)
 - [Promise示例](http://yiranyu.github.io/basis/promise.html)
 - [页面复制功能](http://yiranyu.github.io/basis/copy.html)
+- [Web Worker实时显示时间](http://yiranyu.github.io/basis/worker.html)
 
 ## 其它
 - [Three days three design](http://yiranyu.github.io/3day3design/index.html)
