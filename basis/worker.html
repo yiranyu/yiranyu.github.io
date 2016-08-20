@@ -36,9 +36,10 @@
                 if(typeof(w)=="undefined"){ //创建Web Worker对象
                     w=new Worker("js/worker.js");
                  }
+				
                 //当 web worker 传递消息时，会执行事件监听器中的代码。event.data 中存有来自 event.data 的数据。
                 w.onmessage = function (event) {
-                document.getElementById("result").innerHTML=event.data;
+					document.getElementById("result").innerHTML=event.data;
                 };
             }else{
                 document.getElementById("result").innerHTML="Sorry, your browser does not support Web Workers...";
@@ -47,6 +48,7 @@
 
         function stopWorker(){
             w.terminate(); //终止
+			w=undefined;
         }
     </script>
 </body>
