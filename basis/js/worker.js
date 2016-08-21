@@ -13,7 +13,7 @@ function formatDate(oDate, sFormation) {
 		hours=oDate.getHours(),
 		minutes=oDate.getMinutes(),
 		seconds=oDate.getSeconds(),
-		week=['日','一','二','三','四','五','六'];
+		week=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 	function pat(num){
 		return num<10?'0'+num:num;
 	}	
@@ -33,4 +33,4 @@ function formatDate(oDate, sFormation) {
 		.replace(/s|S/,seconds)
 		.replace(/w/,week[day]);
 }
-console.log(formatDate(new Date(1409894060000), 'yyyy-MM-dd H:m:s 星期w'));//2014-09-05 13:14:20 星期五
+console.log(formatDate(new Date(1409894060000), 'yyyy-MM-dd H:m:s w'));//2014-09-05 13:14:20 星期五
