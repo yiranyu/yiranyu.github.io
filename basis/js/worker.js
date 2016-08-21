@@ -1,5 +1,5 @@
 function time(){
-    postMessage(formatDate(new Date(), 'yyyy-MM-dd H:m:s 星期w')); //postMessage方法用于向HTML页面传回一段消息
+    postMessage(formatDate(new Date(), 'yyyy-MM-dd H:m:s w')); //postMessage方法用于向HTML页面传回一段消息
     setTimeout("time()", 1000);
 }
 time();
