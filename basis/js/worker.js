@@ -12,8 +12,8 @@ function formatDate(oDate, sFormation) {
 		day=oDate.getDay(),
 		hours=oDate.getHours(),
 		minutes=oDate.getMinutes(),
-		seconds=oDate.getSeconds(),
-		week=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+		seconds=oDate.getSeconds();
+		
 	function pat(num){
 		return num<10?'0'+num:num;
 	}	
@@ -30,7 +30,6 @@ function formatDate(oDate, sFormation) {
 		.replace(/mm/,pat(minutes))
 		.replace(/m/,minutes)
 		.replace(/ss|SS/,pat(seconds))
-		.replace(/s|S/,seconds)
-		.replace(/w/,week[day]);
+		.replace(/s|S/,seconds);
 }
 console.log(formatDate(new Date(1409894060000), 'yyyy-MM-dd H:m:s w'));//2014-09-05 13:14:20 ÐÇÆÚÎå
