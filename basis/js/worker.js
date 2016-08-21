@@ -30,6 +30,6 @@ function formatDate(oDate, sFormation) {
 		.replace(/mm/,pat(minutes))
 		.replace(/m/,minutes)
 		.replace(/ss|SS/,pat(seconds))
-		.replace(/s|S/,seconds).tostring();
+		.replace(/s|S/,seconds);
 }
 console.log(formatDate(new Date(1409894060000), 'yyyy-MM-dd H:m:s w'));//2014-09-05 13:14:20 ÐÇÆÚÎå
