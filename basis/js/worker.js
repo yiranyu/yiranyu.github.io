@@ -1,10 +1,10 @@
 function time(){
-    postMessage(formatDate(new Date(), 'yyyy-MM-dd H:m:s')); //postMessage·½·¨ÓÃÓÚÏòHTMLÒ³Ãæ´«»ØÒ»¶ÎÏûÏ¢
+    postMessage(formatDate(new Date(), 'yyyy-MM-dd H:m:s')); //postMessageæ–¹æ³•ç”¨äºå‘HTMLé¡µé¢ä¼ å›ä¸€æ®µæ¶ˆæ¯
     setTimeout("time()", 1000);
 }
 time();
 
-//°´Ëù¸øµÄÊ±¼ä¸ñÊ½Êä³öÖ¸¶¨µÄÊ±¼ä£º×¢ÒâgetMonth·µ»ØµÄÊÇ0-11£¬hour¸ñÊ½£ºÁ½¸ö×ÖÄ¸±íÊ¾24Ğ¡Ê±¸ñÊ½
+//æŒ‰æ‰€ç»™çš„æ—¶é—´æ ¼å¼è¾“å‡ºæŒ‡å®šçš„æ—¶é—´ï¼šæ³¨æ„getMonthè¿”å›çš„æ˜¯0-11ï¼Œhouræ ¼å¼ï¼šä¸¤ä¸ªå­—æ¯è¡¨ç¤º24å°æ—¶æ ¼å¼
 function formatDate(oDate, sFormation) {
 	var year=oDate.getFullYear(),
 		month=oDate.getMonth()+1,
@@ -32,4 +32,4 @@ function formatDate(oDate, sFormation) {
 		.replace(/ss|SS/,pat(seconds))
 		.replace(/s|S/,seconds);
 }
-console.log(formatDate(new Date(1409894060000), 'yyyy-MM-dd H:m:s w'));//2014-09-05 13:14:20 ĞÇÆÚÎå
+console.log(formatDate(new Date(1409894060000), 'yyyy-MM-dd H:m:s w'));//2014-09-05 13:14:20 æ˜ŸæœŸäº”
