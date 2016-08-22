@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>Web worker</title>
+	<style>
+		#content {
+			width: 600px;
+			margin: 50px auto 0;
+		}
+		p {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		button {
+			padding: 10px 20px;
+			font-size: 20px;
+			color: #fff;
+			background-color: #2196F3;
+			border: none;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div id="content">
+		<p>Current Time: <output id="result"></output></p>
+		<button herf="#" onclick="startWorker()">Start Worker</button>
+		<button herf="#" onclick="stopWorker()">Stop Worker</button>
+	</div>
+   
+    <script>
+        var w;
+        function startWorker(){
+            if(typeof(Worker)!=="undefined"){
+                if(typeof(w)=="undefined"){ //创建Web Worker对象
+                    w=new Worker("js/worker.js");
+                 }
+				
+                //当 web worker 传递消息时，会执行事件监听器中的代码。event.data 中存有来自 event.data 的数据。
+                w.onmessage = function (event) {
+		   document.getElementById("result").innerHTML=event.data;
+                };
+            }else{
+                document.getElementById("result").innerHTML="Sorry, your browser does not support Web Workers...";
+            }
+        }
+
+        function stopWorker(){
+            w.terminate(); //终止
+	    w=undefined;
+        }
+    </script>
+</body>
+</html>
