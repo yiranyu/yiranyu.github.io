@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>原声拖拽功能</title>
+	<style>
+		section {
+			width: 800px;
+			height:300px;
+			margin: 20px auto;
+			padding: 20px;
+		}
+		#drag {
+			width: 300px;
+			height: 200px;
+			margin: 20px auto;
+			padding: 20px;
+			background-color: #44CBFF;
+		}
+		
+	</style>
+</head>
+<body>
+	
+	<section>
+		<h1>原生javaScript实现元素拖动</h1>
+		<div id="drag"></div>
+	</section>
+	
+	<script type="text/javascript" src="js/drag.js"></script>
+	<script type="text/javascript">
+		var element=document.getElementById("drag");
+		drag(element);
+		
+	</script>
+</body>
+</html>
