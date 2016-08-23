@@ -22,6 +22,7 @@
 - [Promise示例](http://yiranyu.github.io/basis/promise.html)
 - [页面复制功能](http://yiranyu.github.io/basis/copy.html)
 - [Web Worker实时显示时间](http://yiranyu.github.io/basis/worker.html)
+- [JS原生拖拽元素](http://yiranyu.github.io/basis/drag.html)
 
 ## 其它
 - [Three days three design](http://yiranyu.github.io/3day3design/index.html)
