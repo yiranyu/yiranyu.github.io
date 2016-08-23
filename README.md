@@ -11,7 +11,7 @@
 ## HTML
 - [Web Storage](http://yiranyu.github.io/basis/storage.html)
 - [postMessage](http://yiranyu.github.io/basis/post-message.html)
-- [Canvas Test](http://yiranyu.github.io/basis/canvas.html)
+- [HTML5 Canvas](http://yiranyu.github.io/basis/canvas.html)
 
 ## JavaScript
 
