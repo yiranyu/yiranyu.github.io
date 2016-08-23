@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>HTML5拖放</title>
+	<style>
+		section {
+			width: 800px;
+			height: 600px;
+			margin: 20px auto;
+			padding: 20px;
+			border: 1px solid #f4f4f4;
+		}
+		#sec1, #sec2 {
+			width: 80%;
+			height: 200px;
+			margin: 10px auto;
+			padding: 10px;
+			background-color: #43A790;
+		}
+		img {
+			width: 150px;
+			margin-right: 5px;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<h1>HTML5拖放</h1>
+		<div id="sec1" class="sec" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<div id="sec2" class="sec" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<img id="ice" src="images/ice.jpg" draggable="true" ondragstart="drag(event)"/><img id="truck" src="images/truck.jpg" draggable="true" ondragstart="drag(event)"/><img id="ia" src="images/ia.jpg" draggable="true" ondragstart="drag(event)"/>
+		</div>
+	</section>
+	<script type="text/javascript">
+		function allowDrop(event){
+			event.preventDefault(); //避免浏览器对数据的默认处理（drop 事件的默认行为是以链接形式打开）
+		}
+		function drag(event){
+			event.dataTransfer.setData("Text",event.target.id);
+		}
+		function drop(event){
+			event.preventDefault();
+			if(event.target.className=="sec"){
+				var data = event.dataTransfer.getData("Text"); //获得被拖的数据。该方法将返回在 setData() 方法中设置为相同类型的任何数据。
+				event.target.appendChild(document.getElementById(data));
+			}
+		}
+	
+	</script>
+</body>
+</html>
