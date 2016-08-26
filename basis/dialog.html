@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>纯CSS对话框</title>
+	<style>
+	.main {
+		width: 600px;
+		margin: 50px auto 0;
+	}
+	.dialog-right, .dialog-left, .dialog-top {
+		width: 400px;
+		height: 100px;
+		position: relative; 
+		background-color: #fff;
+		border: 3px solid #f1d652;
+		margin-top: 35px;
+	​}
+	/*边框法*/
+	.dialog-right:after, .dialog-right:before, 
+	.dialog-top:after, .dialog-top:before {
+		content: '';
+		width: 0;
+		height: 0;	
+		font-size: 0;
+		position: absolute;
+		border: solid transparent;
+	}
+	.dialog-right:before {
+		top: 22px;
+		left: 100%;
+		border-width: 12px;
+		border-left-color: #fff;
+		z-index: 100;
+	}
+	.dialog-right:after {
+		top: 18px;
+		left: 100%;
+		border-width: 16px;
+		border-left-color: #f1d652;
+		z-index: 1;
+	}
+	.dialog-top:before {
+		top: -24px;
+		left: 22px;
+		border-width: 12px;
+		border-bottom-color: #fff;
+		z-index: 100;
+	}
+	.dialog-top:after {
+		top: -32px;
+		left: 18px;
+		border-width: 16px;
+		border-bottom-color: #f1d652;
+		z-index: 1;
+	}
+	            
+	</style>
+</head>
+<body>
+	<div class="main">
+		<h1>纯CSS单标签对话框</h2>
+		<div class="dialog-right"></div>
+		<div class="dialog-top"></div>
+
+
+	</div>
+</body>　
+</html>
