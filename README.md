@@ -7,6 +7,7 @@
 - [Flex布局](http://yiranyu.github.io/basis/flex.html)
 - [CSS3旋转框](http://yiranyu.github.io/basis/animation.html)
 - [CSS3立体3D](http://yiranyu.github.io/basis/3d.html)
+- [纯CSS单标签对话框](http://yiranyu.github.io/basis/dialog.html)
 
 ## HTML
 - [Web Storage](http://yiranyu.github.io/basis/storage.html)
