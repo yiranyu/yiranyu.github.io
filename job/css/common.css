@@ -1,0 +1,195 @@
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 16px;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.clear {
+	both: clear;
+}
+
+a {
+	text-decoration: none;
+}
+/*-------------------header section start----------------------*/
+header#header {
+	width: 100%;
+	height: 860px;
+	background-color: #42a5f6;
+	padding: 10px 0 0 0;
+}
+
+#header #logo {
+	position: absolute;
+	width: 200px;
+	height: 60px;
+	background: url(../images/logo.png) no-repeat;
+	margin-left: 20%;
+}
+
+#header ul#nav {
+	list-style: none;
+	margin-left: 40%;
+}
+
+#header ul#nav li {
+	display: inline-block;
+	float: left;
+	color: #fff;
+	padding: 10px 20px;
+}
+
+#header ul#nav li a{
+	color: #fff;
+}
+
+#header #info {
+	width: 60%;
+	min-width: 800px;
+	height: 490px;
+	color: #fff;
+	margin: 160px auto 0 auto;
+	background: url(../images/people.png) no-repeat;
+	padding: 120px 0 0 390px;
+}
+
+#header #info h1{
+	text-transform: uppercase;
+	font-size: 2.5em;
+	font-weight: bold;
+}
+
+#header #info p{
+	margin: 2em 0 2.5em 0;
+	font-size: 1.2em;
+}
+
+#get-start, #read-more{
+	width: 2em;
+	padding: 10px 20px;
+	font-weight: 700;
+	border-radius: 20px;
+	text-transform: uppercase;
+}
+
+#get-start {
+	background-color: #1d89e4;
+	color: #fff;
+}
+
+#read-more {
+	background-color: #fff;
+	color: #1d89e4;
+}
+
+#numners {
+	width: 100%;
+	height: 200px;
+	background-color: #1d89e4;
+}
+
+#numners ul {
+	list-style: none;
+	width: 60%;
+	min-width: 800px;
+	height: 100%;
+	margin: 0 auto;
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: 500;
+}
+
+#numners ul li{
+	display: inline-block;
+	float: left;
+	width: 33.33%;
+	height: 100%;
+	text-align: center;
+	padding: 60px 5%;
+	line-height: 40px;
+}
+
+#numners ul li span {
+	display: block;
+}
+
+/*-------------------header section end----------------------*/
+
+/*-------------------jobs section start----------------------*/
+#jobs {
+	width: 60%;
+	min-width: 800px;
+	margin: 0 auto;
+}
+
+#jobs h3 {
+	margin-top: 50px;
+	line-height: 40px;
+	font-size: 1.2em;
+}
+
+#jobs .line {
+	border-bottom: 2px solid #000;
+	width: 30px;	
+}
+
+#jobs ul {
+	list-style: none;
+}
+
+#jobs ul#job {
+	width: 100%;
+	border-top: 1px solid #f4f4f4;
+	margin: 50px 0 0 0;
+}
+
+#jobs ul#job>li{
+	height: 100px;
+	padding: 10px 0;
+	overflow: hidden;
+}
+
+
+#job ul li {
+	display: inline-block;
+	float: left;
+	padding: 10px;
+	width: 20%;
+}
+
+#job ul li:first-child,
+#job ul li:nth-chlid(2) {
+	width: 15%;
+}
+.portrait {
+	width: 80px;
+	height: 80px;
+	border-radius: 40px;
+}
+.
+/*-------------------jobs section end----------------------*/
+footer#footer {
+	width: 100%;
+	height: 5em;
+}
+
+#footer p {
+	text-align: center;
+	font-size: 1em;
+	color: #999;
+}
